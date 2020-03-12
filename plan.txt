@@ -1,0 +1,100 @@
+5 # présentation
+
+5 # Introduction
+  * sécurité vs externalisation ?
+  * plan
+
+5 # Terminologie
+  * externalisation
+  * infogérance
+
+20 # Hébergement mutualisé
+  * grands acteurs
+  * à éviter
+  * mutualisation web/mail/ftp…
+  * mutualisation DNS
+  * virtualisation/conteneurisation ?
+
+30 # Hébergement dédié
+  * grands acteurs
+  * préférable
+  * à distance ou non
+  * serveurs mais pas seulement
+  * risques
+    * interventions sur site
+    * interventions à distance
+    * compromission d'identifiants
+    * fuite de données (soft ou hard)
+    * niveau d'expertise
+    * erreurs de configuration
+    * délais de réaction
+    * sous-traitance en cascade
+    * manque de traçabilité
+    * abus de privilèges
+    * détournement de ressources
+
+35 # Cloud Computing
+  * *aaS
+  * privé/communautaire/public ?
+  * grands acteurs
+  * API REST
+  * *aC
+  * avantages
+  * périmètre
+  * cloud hybride ?
+  * risques
+    * coût
+    * mauvaise maîtrise
+    * ressources mutualisées
+    * localisation des données
+    * monopole
+    * souveraineté
+    * solutions/API propriétaires
+    * responsabilité partagée
+
+50 # Mitigation des risques
+  dispositions légales et contractuelles
+    * appels d'offre
+    * contrat d'infoégrance
+    * assurances
+    * localisation
+    * RGPD et donnée personnelles
+    * SLA
+    * moyens de communication
+    * gestion des demandes
+    * Réversibilité
+    * Résiliation
+
+  certifications et audits
+    * Audits
+      * black/grey/whitebox
+    * Certifications
+
+  * bonnes pratiques
+    * chiffrement
+    * sauvegardes
+    * journalisation
+    * gestion de version
+
+  * solutions techniques
+    * bastions
+    * RBAC
+    * WAF
+    * IDS
+    * patch management
+
+  * tests et simulations
+    * tests de charge
+    * tests de restauration
+    * tests de bascule
+    * Chaos monkey
+
+30 # Questions
+
+archis type :
+
+- bastion
+- aws waf + lambda
+- centralisation de logs
+- backups cross account/cross cloud
+- secrets KMS

@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="reveal-js/css/reset.css">
+	<link rel="stylesheet" href="reveal-js/css/reveal.css">
+	<link rel="stylesheet" href="reveal-js/css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="reveal-js/lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'reveal-js/css/print/pdf.css' : 'reveal-js/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2>Sécurité des services externalisés</h2>
+			</section>
+
+			<section>
+				<section>
+					<h3>Adrien Bréfort</h3>
+					<ul>
+						<li class="fragment"><span>6 ans @ Claranet France</span></li>
+						<li class="fragment"><span>DevOps Engineer</span></li>
+						<li class="fragment"><span>Web, IoT, SI…</span></li>
+						<li class="fragment"><span>OnPrem, AWS, GCP, Azure…</span></li>
+						<li class="fragment"><span>Architecture, intégration, automatisation, CI/CD…</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Claranet France</h3>
+					<ul>
+						<li class="fragment"><span>Infogérance d'applications critiques</span></li>
+						<li class="fragment"><span>+600 collaborateurs</span></li>
+						<li class="fragment"><span>5 sites en France</span></li>
+						<li class="fragment"><span>Tout secteurs d'activté</span></li>
+						<li class="fragment"><span>Organisation multi-spécialisée</span></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Sécurité vs Externalisation ?</h3>
+				</section>
+
+				<section>
+					<h3>Plan</h3>
+					<ol>
+						<li><span>Terminologie</span></li>
+						<li><span>Hébergement mutualisé</span></li>
+						<li><span>Hébergement dédié</span></li>
+						<li><span>Cloud computing</span></li>
+						<li><span>Mitigation des risques</span></li>
+						<li><span>Questions</span></li>
+					</ol>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Terminologie</h3>
+					<ul>
+						<li class="fragment"><span>externalisation</span></li>
+						<li class="fragment"><span>infogérance</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Terminologie</h3>
+					<ul>
+						<li class="fragment"><span>MSP</span></li>
+						<li class="fragment"><span>TMA</span></li>
+						<li class="fragment"><span>MCO</span></li>
+						<li class="fragment"><span>SLA</span></li>
+						<li class="fragment"><span>…</span></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Hébergement mutualisé</h3>
+				</section>
+
+				<section>
+					<h3>Acteurs</h3>
+					<ul>
+						<li class="fragment"><span>OVH</span></li>
+						<li class="fragment"><span>Online</span></li>
+						<li class="fragment"><span>Gandi</span></li>
+						<li class="fragment"><span>1&1</span></li>
+						<li class="fragment"><span>Ikoula</span></li>
+						<li class="fragment"><span>…</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Services mutualisés</h3>
+					<ul>
+						<li class="fragment"><span>web</span></li>
+						<li class="fragment"><span>mail</span></li>
+						<li class="fragment"><span>ftp</span></li>
+						<li class="fragment"><span>DNS</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Risques</h3>
+					<ul>
+						<li class="fragment"><span>niveau de service</span></li>
+						<li class="fragment"><span>bad neighbours</span></li>
+						<li class="fragment"><span>isolation/intrusion</span></li>
+						<li class="fragment"><span>blacklisting</span></li>
+						<li class="fragment"><span>à éviter à tout prix</span></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Hébergement dédié</h3>
+				</section>
+
+				<section>
+					<h3>Acteurs</h3>
+					<ul>
+						<li class="fragment"><span>IBM</span></li>
+						<li class="fragment"><span>OBS</span></li>
+						<li class="fragment"><span>OVH</span></li>
+						<li class="fragment"><span>Ikoula</span></li>
+						<li class="fragment"><span>Claranet</span></li>
+						<li class="fragment"><span>…</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Ressources dédiées</h3>
+					<ul>
+						<li class="fragment"><span>serveurs</span></li>
+						<li class="fragment"><span>équipements réseau</span></li>
+						<li class="fragment"><span>baies de stockage</span></li>
+						<li class="fragment"><span>baies de rackage</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Infogérance à distance</h3>
+					<ul>
+						<li class="fragment"><span>presque toujours le cas</span></li>
+						<li class="fragment"><span>propriété des datacenters</span></li>
+						<li class="fragment"><span>propriété des équipements</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Risques</h3>
+					<ul>
+						<li class="fragment"><span>interventions sur site</span></li>
+						<li class="fragment"><span>interventions à distance</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Risques</h3>
+					<ul>
+						<li class="fragment"><span>compromission d'identifiants</span></li>
+						<li class="fragment"><span>fuite de données</span></li>
+						<li class="fragment"><span>abus de privilèges</span></li>
+						<li class="fragment"><span>détournement de ressources</span></li>
+						<li class="fragment"><span>manque de traçabilité</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Risques</h3>
+					<ul>
+						<li class="fragment"><span>niveau d'expertise</span></li>
+						<li class="fragment"><span>erreurs de configuration</span></li>
+						<li class="fragment"><span>délais de réaction</span></li>
+						<li class="fragment"><span>sous-traitance en cascade</span></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h3>Mitigation des risques</h3>
+				</section>
+
+				<section>
+					<h3>lois et contrats</h3>
+					<ul>
+						<li class="fragment"><span>appels d'offre</span></li>
+						<li class="fragment"><span>contrat d'infogérance</span></li>
+						<li class="fragment"><span>assurances</span></li>
+						<li class="fragment"><span>résiliation</span></li>
+						<li class="fragment"><span>reversibilité</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>lois et contrats</h3>
+					<ul>
+						<li class="fragment"><span>localistion géographique</span></li>
+						<li class="fragment"><span>RGPD</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>lois et contrats</h3>
+					<ul>
+						<li class="fragment"><span>moyens de communication</span></li>
+						<li class="fragment"><span>gestion des demandes</span></li>
+						<li class="fragment"><span>méthodologie (ITIL, Agile…)</span></li>
+						<li class="fragment"><span>SLA</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>audits</h3>
+					<ul>
+						<li class="fragment"><span>Blackbox</span></li>
+						<li class="fragment"><span>Greybox</span></li>
+						<li class="fragment"><span>Whitebox</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>certifications</h3>
+					<ul>
+						<li class="fragment"><span>ISO27001</span></li>
+						<li class="fragment"><span>HDS</span></li>
+						<li class="fragment"><span>PCI-DSS</span></li>
+						<li class="fragment"><span>fournisseurs et clouds publics</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>bonnes pratiques</h3>
+					<ul>
+						<li class="fragment"><span>chiffrement</span></li>
+						<li class="fragment"><span>sauvegardes</span></li>
+						<li class="fragment"><span>journalisation</span></li>
+						<li class="fragment"><span>gestion de version</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>solutions techniques</h3>
+					<ul>
+						<li class="fragment"><span>bastions</span></li>
+						<li class="fragment"><span>RBAC</span></li>
+						<li class="fragment"><span>WAF</span></li>
+						<li class="fragment"><span>IDS</span></li>
+						<li class="fragment"><span>patch management/CVEs</span></li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>tests et simulations</h3>
+					<ul>
+						<li class="fragment"><span>tests de charge</span></li>
+						<li class="fragment"><span>tests de restauration</span></li>
+						<li class="fragment"><span>tests de bascule</span></li>
+						<li class="fragment"><span>Chaos engineering</span></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h3>questions</h3>
+			</section>
+
+			<section>
+				<h3>architectures types</h3>
+			</section>
+		</div>
+	</div>
+
+	<script src="reveal-js/js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			hash: true,
+			dependencies: [
+				{ src: 'reveal-js/plugin/markdown/marked.js' },
+				{ src: 'reveal-js/plugin/markdown/markdown.js' },
+				{ src: 'reveal-js/plugin/highlight/highlight.js' },
+				{ src: 'reveal-js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+
+</html>
